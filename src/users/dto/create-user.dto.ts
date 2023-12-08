@@ -1,5 +1,4 @@
-import { Schedule } from "../entities/schedules.entity";
-import { CreateScheduleDto } from "./create-schedule";
+import { CreateScheduleDto } from "src/schedule/dto/create-schedule.dto";
 
 export class CreateUserDto {
     email:string;

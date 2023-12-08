@@ -4,7 +4,7 @@ import { UpdateSubjectDto } from './dto/update-subject.dto';
 import { EntityManager, Repository } from 'typeorm';
 import { Subject } from './entities/subject.entity';
 import { InjectRepository } from '@nestjs/typeorm';
-import { SchoolSubject } from './entities/schoolSubject.entity';
+import { SchoolSubjects } from 'src/school-subjects/entities/school-subject.entity';
 
 @Injectable()
 export class SubjectsService {
@@ -15,7 +15,7 @@ export class SubjectsService {
   ) { }
 
   async create(createSubjectDto: CreateSubjectDto) {
-    const schoolSubject = new SchoolSubject({ 
+    const schoolSubject = new SchoolSubjects({ 
       ...createSubjectDto.disciplina
     });
     const subject = new Subject({

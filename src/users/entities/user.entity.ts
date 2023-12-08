@@ -1,6 +1,6 @@
 import { Column, Entity, OneToMany, OneToOne, PrimaryGeneratedColumn } from "typeorm";
-import { Schedule } from "./schedules.entity";
 import { AbstractEntity } from "src/database/abstract.entity";
+import { Schedule } from "src/schedule/entities/schedule.entity";
 
 @Entity({name: 'users'})
 export class User extends AbstractEntity<User>{

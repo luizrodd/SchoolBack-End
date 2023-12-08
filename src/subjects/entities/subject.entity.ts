@@ -1,5 +1,5 @@
+import { SchoolSubjects } from "src/school-subjects/entities/school-subject.entity";
 import { Column, CreateDateColumn, DeleteDateColumn, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
-import { SchoolSubject } from "./schoolSubject.entity";
 
 @Entity({ name: 'subjects' })
 export class Subject {
@@ -36,9 +36,9 @@ export class Subject {
     @DeleteDateColumn({ name: 'deleted_at' })
     deletedAt: string;
 
-    @ManyToOne(() => SchoolSubject, {cascade: true})
+    @ManyToOne(() => SchoolSubjects, {cascade: true})
     @JoinColumn()
-    disciplina: SchoolSubject;
+    disciplina: SchoolSubjects;
 
     constructor(subject: Partial<Subject>) {
         Object.assign(this, subject);
